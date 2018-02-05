@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Palindrome Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <h2>Please give input string</h2>
+  
+   <div class="row form-group">
+	<div class="col-sm-4">
+      		<label for="usr">Input String:
+      		<input type="text" id="usr" name="usr"  class="form-control">
+		</label>
+	</div>
+	<div class="col-sm-4">
+		<br>
+    		<input id="submit" type="submit" class="btn btn-info" value="Submit">
+	</div>
+	<div class="col-sm-4"></div>
+    
+   </div>
+	<div class="row" id="adminMassage">
+		<label style="padding:15px" id="result"></label>
+	</div>
+</div>
+<script>
+  $(document).ready(function(){
+       $("#submit").click(function(){
+		var formData = $("#usr").val();
+        	$.ajax({
+			url:"http://localhost/vaibhav_raj_mishra/palindrome.py/index",
+			type:"post",
+			data:{'usr':formData},
+			success:function(response){
+				$("#result").html(response);
+                                $("#usr").val("");
+                                $("#usr").focus();
+			},
+			error:function(response){
+				alert("Not work");
+			}
+		});
+	  });
+  });
+</script>
+</body>
+</html>
