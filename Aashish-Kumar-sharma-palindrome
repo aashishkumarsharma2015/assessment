@@ -1,0 +1,6 @@
+1. Install Node js and npm with latest verion
+2. go to command prompt and go to the directory where project folder is.
+3. then write npm start and hit enter.
+4. then it should run if everything is done as mentioned.
+5. if it gives no error go to http://localhost:3000/#
+6. then you can go ahead to check with you queries.
